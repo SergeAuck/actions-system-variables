@@ -4,8 +4,15 @@ on:
     branches:
       - main
       - dev
+env:
+  MONGO_DB_NAME: gha-demo
 jobs:
   test:
+    env:
+      MONGODB_CLUSTER_ADDRESS: cluster0.13pwqcc.mongo.db
+      MONGODB_USERNAME: testUser11
+      MONGODB_PASSWORD: NerfKfmnzmZ11
+      PORT: 8080
     environment: testing
     runs-on: ubuntu-latest
     steps:
@@ -29,5 +36,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Output information
-        run: |        
+        run: |
           echo "..."
