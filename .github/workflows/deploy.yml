@@ -4,7 +4,7 @@ on:
     branches:
       - main
       - dev
-env:
+env:go
   MONGO_DB_NAME: gha-demo
 jobs:
   test:
@@ -30,7 +30,8 @@ jobs:
       - name: Run tests
         run: npm test
       - name: Output information
-        run: echo "MONGODB_USERNAME: ${{ env.MONGO_DB_NAME}}"
+        run: |
+          echo "MONGODB_USERNAME: ${{ env.MONGO_DB_NAME }}"
   deploy:
     needs: test
     runs-on: ubuntu-latest
