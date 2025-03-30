@@ -4,7 +4,7 @@ on:
     branches:
       - main
       - dev
-env:go
+env:
   MONGO_DB_NAME: gha-demo
 jobs:
   test:
